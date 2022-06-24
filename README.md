@@ -5,11 +5,11 @@ USING THE MOVIES ARRAY GET THE FOLLOWING STORED IN A VARIABLE FOR
 SECTION 1. EXERCISE THE .map() method
 EXAMPLE let moviesTitles = (for the first task in this section)
 
-   1) Movie titles
-   2) Movie title and description
-   3) Movie title, description, genre
-   TO GET THE GENRE NAME genre.name
-   4) Movie title, description, genre name, director name
+      1) Movie titles
+      2) Movie title and description
+      3) Movie title, description, genre
+       TO GET THE GENRE NAME genre.name
+      4) Movie title, description, genre name, director name
 
 
 SECTION 2. EXERCISE THE .filter() map
