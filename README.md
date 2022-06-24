@@ -22,6 +22,8 @@ EXAMPLE let adventureMovies = (for the first task in this section)
     5) Get all adventure genre movies that were released later then 2011
 
 SECTION 3. LETS CREATE SOME HTML
+    Create a list of movies and use the following design for each card.
+   
     I will add a design file
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
