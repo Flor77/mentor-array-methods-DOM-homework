@@ -25,6 +25,8 @@ SECTION 3. LETS CREATE SOME HTML
    
     Create a list of movies and use the following design for each card. Add each card one next to another with some space between them.
     The design doesn't have to be exactly the same ( talking about the spacings, I just want to see the image on the left and the informations on the right
+    
+    How to create a img tag in JS and add a src value to it https://softauthor.com/javascript-working-with-images/
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
