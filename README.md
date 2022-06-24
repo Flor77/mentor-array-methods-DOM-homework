@@ -8,8 +8,7 @@ EXAMPLE let moviesTitles = (for the first task in this section)
    1) Movie titles
    2) Movie title and description
    3) Movie title, description, genre
-     TO GET THE GENRE NAME genre.name
-
+   TO GET THE GENRE NAME genre.name
    4) Movie title, description, genre name, director name
 
 
@@ -28,7 +27,7 @@ SECTION 3. LETS CREATE SOME HTML
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
      background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 
 ***BONUS Create 3 buttons to filter the movies by genre like we did on the live demo
 
