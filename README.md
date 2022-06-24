@@ -23,7 +23,7 @@ EXAMPLE let adventureMovies = (for the first task in this section)
 
 SECTION 3. LETS CREATE SOME HTML
    
-    Create a list of movies and use the following design for each card.
+    Create a list of movies and use the following design for each card. Add each card one next to another with some space between them.
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
