@@ -192,55 +192,46 @@ EXAMPLE let moviesTitles = (for the first task in this section)
       4) Movie title, description, genre name, director name*/
 
 // 1) Movie titles
-let moviesTtle =
-movies.map(item => console.log(item.title));
+let moviesTitle =
+movies.map(movie => movie.title);
 
 //2) Movie title and description
-let moviesTitleDescr = movies.map((item) => {
-  const {
-    Title=item.title, 
-    Description=item.description} = movies;
-  return console.log({
-    Title,
-    Description})
-});
-
-//daca fac destructurarea cum ai facut in live code da undefined 
-/*movies.map((item) => {
+let moviesTitleDescription = movies.map((movie) => {
   const {
     title, 
-    description} = movies;
-  return console.log({
+    description} = movie;
+  return {
     title,
-    description})
-});*/
+    description}
+});
 
 //3) Movie title, description, genre
 // movies.map(item => console.log(item.description));
-let moviesTitleDescrGenre = movies.map((item) => {
+let moviesTitleDescrGenre = movies.map((movie) => {
   const {
-    Title=item.title, 
-    Description=item.description,
-    Genre=item.genre} = movies;
-  return console.log({
-    Title,
-    Description,
-    Genre})
+    title, 
+    description,
+    genre} = movie;
+  return {
+    title, 
+    description,
+    genre}
 });
 
 //4) Movie title, description, genre name, director name
-let moviesTitleDescrGenreDir = movies.map((item) => {
+let moviesTitleDescrGenreDir = movies.map((movie) => {
   const {
-    Title=item.title, 
-    Description=item.description,
-    genreName=item.genre.name,
-    directorName= item.director.name
-    } = movies;
-  return console.log({
-    Title,
-    Description,
+    title, 
+    description,
+    genre: {name: genreName},
+    director: {name: nameDirector}
+    } = movie;
+  return {
+    title,
+    description,
     genreName,
-    directorName})
+    nameDirector
+}
 });
 
 
