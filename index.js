@@ -180,5 +180,70 @@ const movies = [
   },
 ];
 
+// console.log(movies);
 
-console.log(movies);
+/*SECTION 1. EXERCISE THE .map() method
+EXAMPLE let moviesTitles = (for the first task in this section)
+
+      1) Movie titles
+      2) Movie title and description
+      3) Movie title, description, genre
+       TO GET THE GENRE NAME genre.name
+      4) Movie title, description, genre name, director name*/
+
+// 1) Movie titles
+let moviesTtle =
+movies.map(item => console.log(item.title));
+
+//2) Movie title and description
+let moviesTitleDescr = movies.map((item) => {
+  const {
+    Title=item.title, 
+    Description=item.description} = movies;
+  return console.log({
+    Title,
+    Description})
+});
+
+//daca fac destructurarea cum ai facut in live code da undefined 
+/*movies.map((item) => {
+  const {
+    title, 
+    description} = movies;
+  return console.log({
+    title,
+    description})
+});*/
+
+//3) Movie title, description, genre
+// movies.map(item => console.log(item.description));
+let moviesTitleDescrGenre = movies.map((item) => {
+  const {
+    Title=item.title, 
+    Description=item.description,
+    Genre=item.genre} = movies;
+  return console.log({
+    Title,
+    Description,
+    Genre})
+});
+
+//4) Movie title, description, genre name, director name
+let moviesTitleDescrGenreDir = movies.map((item) => {
+  const {
+    Title=item.title, 
+    Description=item.description,
+    genreName=item.genre.name,
+    directorName= item.director.name
+    } = movies;
+  return console.log({
+    Title,
+    Description,
+    genreName,
+    directorName})
+});
+
+
+
+
+   
