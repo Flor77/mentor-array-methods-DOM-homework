@@ -195,30 +195,25 @@ const movies = [
 let scienceFictionMovies = movies.filter((item)=> {
   return item.genre.name === 'Science Fiction';
 })
-console.log(scienceFictionMovies)
 
 //2) Get all movies with Adventure genre
 let adventureMovies = movies.filter((item)=> {
   return item.genre.name === 'Adventure';
 })
-console.log(adventureMovies)
 
 //3) Get all movies with Fantasy genre
 let fantasyMovies = movies.filter((item)=> {
   return item.genre.name === 'Fantasy';
 })
-console.log(fantasyMovies)
 
 //4) Get all movies that were realeased later then 2007
 let release2007Movies = movies.filter((item)=> {
   return item.release  > 2007;
 })
-console.log(release2007Movies)
 
 //Get all adventure genre movies that were released later then 2011
 let release2011AdventureMovies = movies.filter((item)=> {
   return item.genre.name === 'Adventure' && item.release > 2011;
 })
-console.log(release2011AdventureMovies)
 
    
