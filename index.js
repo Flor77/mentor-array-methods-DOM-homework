@@ -92,7 +92,7 @@ const movies = [
   {
     release: "2004",
     imageurl:
-      "https://static.wikia.nocookie.net/harrypotter/images/a/a8/Harry_Potter_and_the_Prisoner_of_Azkaban_2.jpg/revision/latest?cb=20130803163319",
+      "https://images-na.ssl-images-amazon.com/images/I/5100B4U4ylL._AC_.jpg",
     description:
       "Harry Potter's (Daniel Radcliffe) third year at Hogwarts starts off badly when he learns deranged killer Sirius Black (Gary Oldman) has escaped from Azkaban prison and is bent on murdering the teenage wizard. While Hermione's (Emma Watson) cat torments Ron's (Rupert Grint) sickly rat, causing a rift among the trio, a swarm of nasty Dementors is sent to protect the school from Black. A mysterious new teacher helps Harry learn to defend himself, but what is his secret tie to Sirius Black?",
     title: "Harry Potter and the Prisoner of Azkaban",
@@ -180,61 +180,81 @@ const movies = [
   },
 ];
 
-// console.log(movies);
-
-/*SECTION 1. EXERCISE THE .map() method
-EXAMPLE let moviesTitles = (for the first task in this section)
-
-      1) Movie titles
-      2) Movie title and description
-      3) Movie title, description, genre
-       TO GET THE GENRE NAME genre.name
-      4) Movie title, description, genre name, director name*/
-
-// 1) Movie titles
-let moviesTitle =
-movies.map(movie => movie.title);
-
-//2) Movie title and description
-let moviesTitleDescription = movies.map((movie) => {
-  const {
-    title, 
-    description} = movie;
-  return {
-    title,
-    description}
-});
-
-//3) Movie title, description, genre
-// movies.map(item => console.log(item.description));
-let moviesTitleDescrGenre = movies.map((movie) => {
-  const {
-    title, 
-    description,
-    genre} = movie;
-  return {
-    title, 
-    description,
-    genre}
-});
-
-//4) Movie title, description, genre name, director name
-let moviesTitleDescrGenreDir = movies.map((movie) => {
-  const {
-    title, 
-    description,
-    genre: {name: genreName},
-    director: {name: nameDirector}
-    } = movie;
-  return {
-    title,
-    description,
-    genreName,
-    nameDirector
-}
-});
-
-
-
-
+/*SECTION 3. LETS CREATE SOME HTML
    
+    Create a list of movies and use the following design for each card. Add each card one next to another with some space between them.
+    The design doesn't have to be exactly the same ( talking about the spacings, I just want to see the image on the left and the informations on the right
+    
+    How to create a img tag in JS and add a src value to it https://softauthor.com/javascript-working-with-images/
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+     background: rgb(238,174,202);
+     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
+***BONUS Create 3 buttons to filter the movies by genre like we did on the live demo*/
+
+let container = document.getElementById('container');
+
+let createMovieCard = (movies) => {
+  container.innerHTML = '';
+  movies.forEach((movie) => {
+    const {title, genre, release, description, director, imageurl} = movie;
+
+    let movieWrapper = document.createElement('div');
+    container.appendChild(movieWrapper);
+    movieWrapper.className = 'movie-wrapper';
+
+    let movieImg = document.createElement('img');
+    movieImg.src = imageurl;
+    movieImg.className = 'movie-img';
+    movieWrapper.appendChild(movieImg);
+
+    let movieContainer = document.createElement('div');
+    movieContainer.className = 'movie-container';
+    movieWrapper.appendChild(movieContainer);
+
+    let movieTitle = document.createElement('h1');
+    movieTitle.innerHTML = title;
+    movieContainer.appendChild(movieTitle);
+
+    let movieGenre = document.createElement('h1');
+    movieGenre.innerHTML = `Genre: ${genre.name}` ;
+    movieContainer.appendChild(movieGenre);
+
+    let movieRelease = document.createElement('h3');
+    movieRelease.innerHTML = `Release date: ${release}`;
+    movieContainer.appendChild(movieRelease);
+
+    let movieDescription = document.createElement('p');
+    movieDescription.innerHTML = description;
+    movieContainer.appendChild(movieDescription);
+
+    let movieDirector = document.createElement('h3');
+    movieDirector.innerHTML = `Director: ${director.name}`;
+    movieContainer.appendChild(movieDirector);
+  });
+}
+
+createMovieCard(movies);
+
+let getAdventureGenre = () => {
+  let adventureGenre = movies.filter((movie) => {
+    return movie.genre.name === 'Adventure'
+  })
+  createMovieCard(adventureGenre);
+};
+
+let getScienceFictionGenre = () => {
+  let scienceFictionGenre = movies.filter((movie) => {
+    return movie.genre.name === 'Science Fiction'
+  })
+  createMovieCard(scienceFictionGenre);
+};
+
+let getFantasy = () => {
+  let fantasyGenre = movies.filter((movie) => {
+    return movie.genre.name === 'Fantasy'
+  })
+  createMovieCard(fantasyGenre);
+};
