@@ -223,14 +223,14 @@ let moviesTitleDescrGenreDir = movies.map((movie) => {
   const {
     title, 
     description,
-    genre: {name: genreName},
-    director: {name: nameDirector}
+    genre,
+    director
     } = movie;
   return {
     title,
     description,
-    genreName,
-    nameDirector
+    genre: genre.name,
+    director: director.name
 }
 });
 
