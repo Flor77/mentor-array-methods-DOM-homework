@@ -229,10 +229,12 @@ let createMovieCard = (movies) => {
     let movieDescription = document.createElement('p');
     movieDescription.innerHTML = description;
     movieContainer.appendChild(movieDescription);
+    movieDescription.className = 'text-align';
 
     let movieDirector = document.createElement('h3');
     movieDirector.innerHTML = `Director: ${director.name}`;
     movieContainer.appendChild(movieDirector);
+    movieDirector.className = 'text-align';
   });
 }
 
